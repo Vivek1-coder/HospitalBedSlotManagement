@@ -221,7 +221,7 @@ def hospitallogin():
 def logout():
     logout_user()
     flash("Logout Successful","warning")
-    return redirect(url_for('login'))
+    return redirect('/')
 
 @app.route('/logoutadmin')
 def logoutadmin():

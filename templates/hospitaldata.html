@@ -5,10 +5,7 @@ Add Hospital Information
 {% endblock title %}
 {% block body %}
 <br>
-<br>
-<br>
-<br>
-<br>
+
 
 <div class="container mt-4">
 <div class="display-4 text-center text-info">Add Hospital Data</div>
@@ -18,7 +15,9 @@ Add Hospital Information
     <div class="col-md-4">
 
         <div class="card">
+          <br>
             {% include "message.html" %}
+
             <h4 class="text-center text-success">Covid Care Center</h4>
             <div class="card-body bg-light">
 
@@ -64,15 +63,15 @@ Add Hospital Information
     </div>
 
    
-    <div class="col-md-8">
+    <div class="col-md-6">
         <div class="card mb-3">
             <div class="row g-0">
-              <div class="col-md-4">
-                <img src="https://source.unsplash.com/600x1000/?medical,hospital" class="img-fluid rounded-start" alt="...">
+              <div class="col-md-2 rounded">
+                <img class="rounded" src="https://static.vecteezy.com/system/resources/thumbnails/049/756/952/small_2x/hospital-bed-in-the-hospital-room-concept-hospital-hospital-rest-and-care-for-patients-healthcare-free-video.jpg" alt="...">
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title text-center bg-light">Hospital Data</h5>
+                  <h5 class="card-title text-center bg-light w-50 rounded">Hospital Data</h5>
                   <div class="card bg-dark" style="width: 28rem;">
                     <ul class="list-group list-group-flush bg-dark">
                       <li class="list-group-item">Hospital Code : <b>{{ postsdata.hcode if postsdata else 'N/A' }}</b> </li>
@@ -82,10 +81,11 @@ Add Hospital Information
                       <li class="list-group-item">I.C.U Beds Available : <b>{{ postsdata.icubed if postsdata else 'N/A' }}</b></li>
                       <li class="list-group-item">Ventilators Beds Available : <b>{{ postsdata.vbed if postsdata else 'N/A' }}</b></li>
 
-                      <li class="list-group-item">
+                      <li class="list-group-item ">
                         
-                        <a href="/hedit/{{postsdata.id}}"><i class="fas fa-edit"></i></a> </i>
-                          <a class="ml-4" confirm('Are you sure to Delete data'); href="/hdelete/{{postsdata.id}}"><i class="fas fa-trash-alt"></i></a>
+                        <button class=" btn mx-4 btn-info"><a href="/hedit/{{postsdata.id}}" class="text-black"><i class="fas fa-edit text-black mx-2"></i>Edit</a> </i></button>
+
+                        <button class="mx-4 btn btn-danger"><a class="ml-4 text-black" confirm('Are you sure to Delete data'); href="/hdelete/{{postsdata.id}}"><i class="fas fa-trash-alt text-black mx-2"></i>Delete</a></button>
                      
                     </li>
                      
